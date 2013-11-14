@@ -1,8 +1,10 @@
 Testdeviseapp::Application.routes.draw do
-  resources :roles
+  get "permission/user_permissions"
 
+  resources :roles
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
   resources :posts
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -12,6 +12,7 @@ gem 'less-rails'
 gem "therubyracer"
 gem "twitter-bootstrap-rails"
 gem 'devise'
+gem 'ancestry'
 
 
 # Use Uglifier as compressor for JavaScript assets

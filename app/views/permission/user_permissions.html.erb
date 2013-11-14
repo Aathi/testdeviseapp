@@ -1,0 +1,43 @@
+
+<%- model_class = User -%>
+<%- model_class = Role -%>
+
+<h2 id="user_details">User Details</h2>
+<table border="0" cellspacing="5" cellpadding="5">
+	<th>User ID</th>
+	<th>Email Id</th>
+	<th>Last Login</th>
+	<th>Created Date</th>
+	<th>Updated Date</th>
+	<th>Update Permission</th>
+	
+	<%#= model_class.human_attribute_name(:id)%>
+	<%#= model_class.human_attribute_name(:email)%>
+	<%#= model_class.human_attribute_name(:last_sign_in_at)%>
+	<%#= model_class.human_attribute_name(:created_at)%>
+	<%#= model_class.human_attribute_name(:updated_at)%>
+	<%#=t '.actions', :default => t("helpers.actions") %>
+	
+	<% @users.each do |user| %>
+	<tr>
+      	<td><%= user.id %></td>
+      	<td><%= link_to user.email %></td>
+		<td><%= user.last_sign_in_at %></td>
+		<td><%= user.created_at %></td>
+		<td><%= user.updated_at %></td>
+		<td><%#= f.collection_selector :user_role %></td>
+		
+		<td><select name="post[author_id]">
+		    <% Role.all.each do |role| %>
+		        <option value="<%= role.role_name %>"><%= role.role_name %></option>
+		    <% end %>
+		</select>
+		</td>
+				
+	<tr>
+	<% end %>
+</table>
+
+
+
+
