@@ -1,9 +1,15 @@
 Testdeviseapp::Application.routes.draw do
+  
+  root :to => "posts#index"
   get "permission/user_permissions"
 
-  resources :roles
-  devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
-  resources :posts
+
+  resources   :roles
+  devise_for  :users, path_names: { sign_in: "login", sign_out: "logout"}
+  resources   :posts
+  resources   :permission
+  resources   :roles
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

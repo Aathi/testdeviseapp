@@ -9,7 +9,7 @@
 	<th>Last Login</th>
 	<th>Created Date</th>
 	<th>Updated Date</th>
-	<th>Update Permission</th>
+	<th>Permission</th>
 	
 	<%#= model_class.human_attribute_name(:id)%>
 	<%#= model_class.human_attribute_name(:email)%>
@@ -24,14 +24,14 @@
       	<td><%= link_to user.email %></td>
 		<td><%= user.last_sign_in_at %></td>
 		<td><%= user.created_at %></td>
-		<td><%= user.updated_at %></td>
-		<td><%#= f.collection_selector :user_role %></td>
-		
-		<td><select name="post[author_id]">
+		<td><%= user.updated_at %></td>	
+		<td><select name="roles[]">
 		    <% Role.all.each do |role| %>
 		        <option value="<%= role.role_name %>"><%= role.role_name %></option>
 		    <% end %>
 		</select>
+		<td><%= link_to t('.new', :default => t("helpers.links.Update")),
+            new_role_path,:class => 'btn btn-primary' %></td>
 		</td>
 				
 	<tr>

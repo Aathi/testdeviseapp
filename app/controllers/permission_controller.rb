@@ -1,5 +1,5 @@
 class PermissionController < ApplicationController
-  def user_permissions
+  def index
           @users=User.all
   end
 end
